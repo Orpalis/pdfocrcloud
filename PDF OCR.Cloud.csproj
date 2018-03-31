@@ -146,9 +146,7 @@
     </Compile>
     <EmbeddedResource Include="res\labels.json" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="res\banner_pdfocrcloud.png" />
     <EmbeddedResource Include="res\icon_pdfocrcloud.ico" />
