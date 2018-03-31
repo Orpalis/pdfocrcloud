@@ -1,0 +1,18 @@
+﻿[
+  {
+    "Name": "label_lbOcrLanguage",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Langue OCR:",
+      "en": "OCR Language:"
+    }
+  },
+  {
+    "Name": "label_chkSkipPagesWithText",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Ne pas traiter les pages qui ont déjà du texte",
+      "en": "Skip pages already having text"
+    }
+  }
+]
