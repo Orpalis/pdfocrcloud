@@ -16,8 +16,10 @@
  *
  **********************************************************************/
 
+using System;
 using PassportPDF.Tools.Framework.Configuration;
 using PassportPDF.Tools.Framework;
+using pdfOCRCloud.Utilities;
 
 namespace pdfOCRCloud.Views
 {
@@ -50,13 +52,7 @@ namespace pdfOCRCloud.Views
 
         private void SetSelectedOCRLanguage()
         {
-            for (int index = 0; index < PdfOCRGlobals.AvailableOCRLanguages.Length; index++)
-            {
-                if ((string)cboOcrLanguage.Items[index] == PdfOCRGlobals.OCRActionConfiguration.OCRLanguage)
-                {
-                    cboOcrLanguage.SelectedIndex = index;
-                }
-            }
+            cboOcrLanguage.SelectedIndex = Array.IndexOf(PdfOCRGlobals.AvailableOCRLanguages, PdfOCRGlobals.OCRActionConfiguration.OCRLanguage);
         }
 
 
@@ -66,7 +62,7 @@ namespace pdfOCRCloud.Views
             {
                 string language = PdfOCRGlobals.AvailableOCRLanguages[index];
 
-                cboOcrLanguage.Items.Add(language);
+                cboOcrLanguage.Items.Add(OCRLanguageUtilities.GetFullLanguageNameFromAbreviation(language));
 
                 if (language == PdfOCRGlobals.OCRActionConfiguration.OCRLanguage)
                 {
