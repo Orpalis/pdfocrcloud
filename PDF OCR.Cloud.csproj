@@ -58,8 +58,8 @@
     <Reference Include="PassportPDF.Tools.Framework, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\PassportPDF.Tools.Framework.1.0.13\lib\netstandard2.0\PassportPDF.Tools.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="PassportPDF.Tools.WinForm, Version=1.0.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\PassportPDF.Tools.WinForm.1.0.11\lib\net461\PassportPDF.Tools.WinForm.dll</HintPath>
+    <Reference Include="PassportPDF.Tools.WinForm, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\PassportPDF.Tools.WinForm.1.0.13\lib\net461\PassportPDF.Tools.WinForm.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp, Version=106.2.1.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>packages\RestSharp.106.2.1\lib\net452\RestSharp.dll</HintPath>
@@ -115,7 +115,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\AssemblyUtilities.cs" />
-    <Compile Include="Utilities\CommandLineParsingUtilities.cs" />
     <Compile Include="Utilities\OCRLanguageUtilities.cs" />
     <Compile Include="Views\frmMain.cs">
       <SubType>Form</SubType>
