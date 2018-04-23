@@ -28,6 +28,7 @@ namespace pdfOCRCloud
         public const string PRODUCT_NAME = "PassportPDF PDF OCR Cloud";
         public const string APP_EXECUTABLE_NAME = "pdfOCRCloud.exe";
         public const string PASSPORT_PDF_APP_ID = "BA72793B-8097-4F5C-BCF9-F6A3D88A54CA";
+        public const string SOURCE_CODE_LINK = "https://github.com/Orpalis/pdfocrcloud";
 
         public static string[] AvailableOCRLanguages;
         public static bool AutoRun = false;

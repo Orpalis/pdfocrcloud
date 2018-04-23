@@ -36,7 +36,9 @@ namespace pdfOCRCloud.Controller
     internal sealed class PDFOCRController : PassportPDFAppControllerBase
     {
         public PDFOCRController(bool autoRun, string[] args) : base(
-            new PassportPDFDesktopAppInformation(PdfOCRGlobals.PRODUCT_NAME, PdfOCRGlobals.PASSPORT_PDF_APP_ID, PdfOCRGlobals.APP_EXECUTABLE_NAME,
+            new PassportPDFDesktopAppInformation(
+                PdfOCRGlobals.PRODUCT_NAME, PdfOCRGlobals.PASSPORT_PDF_APP_ID, 
+                PdfOCRGlobals.APP_EXECUTABLE_NAME, PdfOCRGlobals.SOURCE_CODE_LINK,
                 AssemblyUtilities.GetVersion(), Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location),
                 Properties.Resources.logo_pdfocrcloud, PdfOCRGlobals.GetApplicationConfigurationFilePath(), autoRun, args))
         {
