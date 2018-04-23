@@ -28,6 +28,7 @@ using PassportPDF.Tools.Framework.Configuration;
 using PassportPDF.Tools.WinForm.Controllers;
 using PassportPDF.Tools.WinForm.Views;
 using PassportPDF.Tools.WinForm.Models;
+using PassportPDF.Tools.WinForm.Utilities;
 using pdfOCRCloud.Utilities;
 using pdfOCRCloud.Views;
 
@@ -37,7 +38,7 @@ namespace pdfOCRCloud.Controller
     {
         public PDFOCRController(bool autoRun, string[] args) : base(
             new PassportPDFDesktopAppInformation(
-                PdfOCRGlobals.PRODUCT_NAME, PdfOCRGlobals.PASSPORT_PDF_APP_ID, 
+                PdfOCRGlobals.PRODUCT_NAME, PdfOCRGlobals.PASSPORT_PDF_APP_ID,
                 PdfOCRGlobals.APP_EXECUTABLE_NAME, PdfOCRGlobals.SOURCE_CODE_LINK,
                 AssemblyUtilities.GetVersion(), Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location),
                 Properties.Resources.logo_pdfocrcloud, PdfOCRGlobals.GetApplicationConfigurationFilePath(), autoRun, args))
@@ -72,7 +73,7 @@ namespace pdfOCRCloud.Controller
             else
             {
                 PdfOCRGlobals.OCRActionConfiguration = ConfigurationManager.ResetDefaultOCRActionConfiguration();
-                CommandLineParsingUtilities.ParseCommandLineArgs(_appInfo.CommandLineArguments, FrameworkGlobals.ApplicationConfiguration, PdfOCRGlobals.OCRActionConfiguration);
+                CommandLineParsingUtilities.ParseCommandLineArgs(_appInfo.CommandLineArguments, FrameworkGlobals.ApplicationConfiguration, ocrActionConfiguration: PdfOCRGlobals.OCRActionConfiguration);
 
                 if (FrameworkGlobals.ApplicationConfiguration.MinimizedWindow)
                 {
