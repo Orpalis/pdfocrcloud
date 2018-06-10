@@ -86,7 +86,7 @@ namespace pdfOCRCloud.Views
         {
             base.ResetDefaultConfiguration();
 
-            PdfOCRGlobals.OCRActionConfiguration = ConfigurationManager.ResetDefaultOCRActionConfiguration();
+            PdfOCRGlobals.OCRActionConfiguration = ConfigurationManager.ResetDefaultPDFOCRActionConfiguration();
             chkSkipPagesWithText.Checked = PdfOCRGlobals.OCRActionConfiguration.SkipPagesWithText;
             SetSelectedOCRLanguage();
             LoadConfiguration();

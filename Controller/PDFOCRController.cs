@@ -41,7 +41,7 @@ namespace pdfOCRCloud.Controller
                 PdfOCRGlobals.PRODUCT_NAME, PdfOCRGlobals.PASSPORT_PDF_APP_ID,
                 PdfOCRGlobals.APP_EXECUTABLE_NAME, PdfOCRGlobals.SOURCE_CODE_LINK,
                 AssemblyUtilities.GetVersion(), Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location),
-                Properties.Resources.logo_pdfocrcloud, PdfOCRGlobals.GetApplicationConfigurationFilePath(), autoRun, args))
+                Properties.Resources.logo_pdfocrcloud, PdfOCRGlobals.INPUT_FILE_TYPE, PdfOCRGlobals.GetApplicationConfigurationFilePath(), autoRun, args))
         {
         }
 
@@ -58,21 +58,21 @@ namespace pdfOCRCloud.Controller
                 return false;
             }
 
-            if (!PdfOCRGlobals.AutoRun)
+            if (!_appInfo.AutoRun)
             {
                 try
                 {
-                    PdfOCRGlobals.OCRActionConfiguration = (OCRActionConfiguration)ConfigurationManager.InitializeConfigurationInstanceEx(PdfOCRGlobals.GetOCRActionConfigurationFilePath(), typeof(OCRActionConfiguration));
+                    PdfOCRGlobals.OCRActionConfiguration = (PDFOCRActionConfiguration)ConfigurationManager.InitializeConfigurationInstanceEx(PdfOCRGlobals.GetOCRActionConfigurationFilePath(), typeof(PDFOCRActionConfiguration));
                 }
                 catch (Exception)
                 {
                     MessageBox.Show(FrameworkGlobals.MessagesLocalizer.GetString("readOCRConfigurationFailure", FrameworkGlobals.ApplicationConfiguration.Language), FrameworkGlobals.MessagesLocalizer.GetString("readConfigurationFailureTitle", FrameworkGlobals.ApplicationConfiguration.Language), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    PdfOCRGlobals.OCRActionConfiguration = ConfigurationManager.ResetDefaultOCRActionConfiguration();
+                    PdfOCRGlobals.OCRActionConfiguration = ConfigurationManager.ResetDefaultPDFOCRActionConfiguration();
                 }
             }
             else
             {
-                PdfOCRGlobals.OCRActionConfiguration = ConfigurationManager.ResetDefaultOCRActionConfiguration();
+                PdfOCRGlobals.OCRActionConfiguration = ConfigurationManager.ResetDefaultPDFOCRActionConfiguration();
                 CommandLineParsingUtilities.ParseCommandLineArgs(_appInfo.CommandLineArguments, FrameworkGlobals.ApplicationConfiguration, ocrActionConfiguration: PdfOCRGlobals.OCRActionConfiguration);
 
                 if (FrameworkGlobals.ApplicationConfiguration.MinimizedWindow)
@@ -116,27 +116,24 @@ namespace pdfOCRCloud.Controller
         }
 
 
-        protected override void OnWorkerWorkCompletion(int workerNumber)
+        protected override void OnOperationsCompletion()
         {
-            base.OnWorkerWorkCompletion(workerNumber);
+            base.OnOperationsCompletion();
 
-            if (_view.WorkerItemCount == 0)
-            {
-                string workCompletionMessage = LogMessagesUtils.GetGenericWorkCompletionMessage(_operationsStats.ProcessedFileCount, _operationsStats.SuccesfullyProcessedFileCount,
+            string workCompletionMessage = LogMessagesUtils.GetGenericWorkCompletionMessage(_operationsStats.ProcessedFileCount, _operationsStats.SuccesfullyProcessedFileCount,
                     _operationsStats.UnsuccesfullyProcessedFileCount, ParsingUtils.GetElapsedTimeString(_stopwatch.Elapsed.Hours, _stopwatch.Elapsed.Minutes, _stopwatch.Elapsed.Seconds, _stopwatch.Elapsed.Milliseconds / 10));
 
-                _view.NotifyOperationsResult(workCompletionMessage);
+            _view.NotifyOperationsResult(workCompletionMessage);
 
-                if (!PdfOCRGlobals.AutoRun)
-                {
-                    _view.PromptInformationMessage(workCompletionMessage, FrameworkGlobals.MessagesLocalizer.GetString("processTerminated", FrameworkGlobals.ApplicationConfiguration.Language));
-                    _view.UnlockView();
-                }
-                else
-                {
-                    Console.Write(workCompletionMessage);
-                    _view.ExitApplication();
-                }
+            if (!_appInfo.AutoRun)
+            {
+                DialogUtilities.ShowInformationMessage(workCompletionMessage, FrameworkGlobals.MessagesLocalizer.GetString("processTerminated", FrameworkGlobals.ApplicationConfiguration.Language));
+                _view.UnlockView();
+            }
+            else
+            {
+                Console.Write(workCompletionMessage);
+                _view.ExitApplication();
             }
         }
 
@@ -144,7 +141,8 @@ namespace pdfOCRCloud.Controller
         protected override void HandleApplicationClosing()
         {
             base.HandleApplicationClosing();
-            if (!PdfOCRGlobals.AutoRun &&
+
+            if (!_appInfo.AutoRun &&
                 (!ConfigurationManager.SaveConfiguration(PdfOCRGlobals.GetApplicationConfigurationFilePath(), FrameworkGlobals.ApplicationConfiguration) ||
                 !ConfigurationManager.SaveConfiguration(PdfOCRGlobals.GetOCRActionConfigurationFilePath(), PdfOCRGlobals.OCRActionConfiguration)))
             {
