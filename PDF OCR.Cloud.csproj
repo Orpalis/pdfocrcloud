@@ -55,11 +55,11 @@
     <Reference Include="PassportPDF, Version=1.0.26.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\PassportPDF.1.0.26\lib\net461\PassportPDF.dll</HintPath>
     </Reference>
-    <Reference Include="PassportPDF.Tools.Framework, Version=1.0.24.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\PassportPDF.Tools.Framework.1.0.24\lib\netstandard2.0\PassportPDF.Tools.Framework.dll</HintPath>
+    <Reference Include="PassportPDF.Tools.Framework, Version=1.0.26.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\PassportPDF.Tools.Framework.1.0.26\lib\netstandard2.0\PassportPDF.Tools.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="PassportPDF.Tools.WinForm, Version=1.0.22.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\PassportPDF.Tools.WinForm.1.0.22\lib\net461\PassportPDF.Tools.WinForm.dll</HintPath>
+    <Reference Include="PassportPDF.Tools.WinForm, Version=1.0.24.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\PassportPDF.Tools.WinForm.1.0.24\lib\net461\PassportPDF.Tools.WinForm.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp, Version=106.3.1.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>packages\RestSharp.106.3.1\lib\net452\RestSharp.dll</HintPath>
