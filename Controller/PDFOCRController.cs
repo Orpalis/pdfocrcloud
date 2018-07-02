@@ -127,7 +127,7 @@ namespace pdfOCRCloud.Controller
 
             if (!_appInfo.AutoRun)
             {
-                DialogUtilities.ShowInformationMessage(workCompletionMessage, FrameworkGlobals.MessagesLocalizer.GetString("processTerminated", FrameworkGlobals.ApplicationConfiguration.Language));
+                _view.ShowInformationMessage(workCompletionMessage, FrameworkGlobals.MessagesLocalizer.GetString("processTerminated", FrameworkGlobals.ApplicationConfiguration.Language));
                 _view.UnlockView();
             }
             else
