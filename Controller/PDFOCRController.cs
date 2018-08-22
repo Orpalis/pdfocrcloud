@@ -38,8 +38,7 @@ namespace pdfOCRCloud.Controller
     {
         public PDFOCRController(bool autoRun, string[] args) : base(
             new PassportPDFDesktopAppInformation(
-                PdfOCRGlobals.PRODUCT_NAME, PdfOCRGlobals.PASSPORT_PDF_APP_ID,
-                PdfOCRGlobals.APP_EXECUTABLE_NAME, PdfOCRGlobals.SOURCE_CODE_LINK,
+                PdfOCRGlobals.PRODUCT_NAME, PdfOCRGlobals.PASSPORT_PDF_APP_ID, PdfOCRGlobals.SOURCE_CODE_LINK,
                 AssemblyUtilities.GetVersion(), Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location),
                 Properties.Resources.logo_pdfocrcloud, PdfOCRGlobals.INPUT_FILE_TYPE, PdfOCRGlobals.GetApplicationConfigurationFilePath(), autoRun, args))
         {
