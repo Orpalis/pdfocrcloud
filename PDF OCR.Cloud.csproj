@@ -71,8 +71,8 @@
       <HintPath>packages\FubarCoder.RestSharp.Portable.HttpClient.4.0.8\lib\net45\FubarCoder.RestSharp.Portable.HttpClient.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="JsonSubTypes, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\JsonSubTypes.1.4.0\lib\net46\JsonSubTypes.dll</HintPath>
+    <Reference Include="JsonSubTypes, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\JsonSubTypes.1.5.0\lib\net46\JsonSubTypes.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Win32.Registry, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -84,14 +84,14 @@
     <Reference Include="Orpalis.Globals.Localization, Version=1.0.0.2, Culture=neutral, PublicKeyToken=47f7b74dc969121f, processorArchitecture=MSIL">
       <HintPath>packages\Orpalis.Globals.Localization.1.0.2\lib\netstandard2.0\Orpalis.Globals.Localization.dll</HintPath>
     </Reference>
-    <Reference Include="PassportPDF, Version=1.0.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\PassportPDF.1.0.33\lib\netstandard1.3\PassportPDF.dll</HintPath>
+    <Reference Include="PassportPDF, Version=1.0.36.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\PassportPDF.1.0.36\lib\netstandard1.3\PassportPDF.dll</HintPath>
     </Reference>
-    <Reference Include="PassportPDF.Tools.Framework, Version=1.0.31.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\PassportPDF.Tools.Framework.1.0.31\lib\netstandard2.0\PassportPDF.Tools.Framework.dll</HintPath>
+    <Reference Include="PassportPDF.Tools.Framework, Version=1.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\PassportPDF.Tools.Framework.1.0.33\lib\netstandard2.0\PassportPDF.Tools.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="PassportPDF.Tools.WinForm, Version=1.0.32.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\PassportPDF.Tools.WinForm.1.0.32\lib\net461\PassportPDF.Tools.WinForm.dll</HintPath>
+    <Reference Include="PassportPDF.Tools.WinForm, Version=1.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\PassportPDF.Tools.WinForm.1.0.33\lib\net461\PassportPDF.Tools.WinForm.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp, Version=106.3.1.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>packages\RestSharp.106.3.1\lib\net452\RestSharp.dll</HintPath>
@@ -184,6 +184,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="res\labels.json" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
