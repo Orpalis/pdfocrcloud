@@ -108,7 +108,7 @@ namespace pdfOCRCloud.Controller
             string operationsCompletionMessage = LogMessagesUtils.TimeStampLogMessage(LogMessagesUtils.GetGenericFileOperationsCompletionText(fileOperationsResult));
             _view.NotifyOperationCompletion(operationsCompletionMessage);
 
-            if (!string.IsNullOrEmpty(FrameworkGlobals.ApplicationConfiguration.LogsPath))
+            if (FrameworkGlobals.ApplicationConfiguration.ExportLogs && !string.IsNullOrEmpty(FrameworkGlobals.ApplicationConfiguration.LogsPath))
             {
                 FrameworkGlobals.LogsManager.LogMessage(operationsCompletionMessage);
             }
