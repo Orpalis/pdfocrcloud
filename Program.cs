@@ -22,11 +22,17 @@ using PassportPDF.Tools.WinForm.Controllers;
 using PassportPDF.Tools.WinForm.Views;
 using pdfOCRCloud.Views;
 using pdfOCRCloud.Controller;
+using System.Net;
 
 namespace pdfOCRCloud
 {
     static class Program
     {
+        static Program()
+        {
+            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11;
+        }
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -34,7 +40,6 @@ namespace pdfOCRCloud
         static void Main(string[] args)
         {
             bool autoRun;
-
             if (args.Length > 0)
             {
                 autoRun = true;
