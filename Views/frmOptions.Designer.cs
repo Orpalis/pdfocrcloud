@@ -70,7 +70,7 @@
             // 
             this.cboOcrLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboOcrLanguage.FormattingEnabled = true;
-            this.cboOcrLanguage.Location = new System.Drawing.Point(102, 9);
+            this.cboOcrLanguage.Location = new System.Drawing.Point(110, 9);
             this.cboOcrLanguage.Name = "cboOcrLanguage";
             this.cboOcrLanguage.Size = new System.Drawing.Size(112, 21);
             this.cboOcrLanguage.TabIndex = 12;
@@ -98,9 +98,6 @@
             // 
             // frmOptions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(497, 344);
             this.Name = "frmOptions";
             this.Text = "PassportPDF PDF OCR Cloud - Options";
             this.tabControl1.ResumeLayout(false);
