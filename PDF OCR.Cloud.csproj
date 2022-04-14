@@ -2,11 +2,21 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>pdfOCRCloud</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>res/icon_pdfocrcloud.ico</ApplicationIcon>
-    <Version>1.0.0.14</Version>
+    <Version>1.0.0.17</Version>
+    <AssemblyName>PDFOCR.Cloud</AssemblyName>
+    <RepositoryUrl>https://github.com/Orpalis/pdfocrcloud.git</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>bin\Release</OutputPath>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,9 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="PassportPDF" Version="1.0.68" />
-    <PackageReference Include="PassportPDF.Tools.Framework" Version="1.0.60" />
-    <PackageReference Include="PassportPDF.Tools.WinForm" Version="1.0.53" />
+    <PackageReference Include="PassportPDF" Version="1.0.89" />
+    <PackageReference Include="PassportPDF.Tools.Framework" Version="1.0.70" />
+    <PackageReference Include="PassportPDF.Tools.WinForm" Version="1.0.60" />
   </ItemGroup>
 
 </Project>
